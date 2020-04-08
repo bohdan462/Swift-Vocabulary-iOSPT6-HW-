@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Words Table Table View Controller-->
+        <!--Swift Vocabulary-->
         <scene sceneID="T8B-X8-BK6">
             <objects>
                 <tableViewController id="cke-cx-61X" customClass="WordsTableTableViewController" customModule="Swift_Vocabulary" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,7 +33,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="cIZ-Mo-eQO" kind="show" identifier="ShowDefinition" id="itM-9c-qT4"/>
+                                    <segue destination="cIZ-Mo-eQO" kind="show" identifier="ShowDefinitionSegue" id="itM-9c-qT4"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -42,7 +42,7 @@
                             <outlet property="delegate" destination="cke-cx-61X" id="RBA-ad-vj3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="iXY-Pq-9Jf"/>
+                    <navigationItem key="navigationItem" title="Swift Vocabulary" id="iXY-Pq-9Jf"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D68-FR-XnB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -57,7 +57,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8Qd-hJ-YTO">
-                                <rect key="frame" x="36" y="175" width="240" height="128"/>
+                                <rect key="frame" x="36" y="175" width="338" height="157"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -66,9 +66,9 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpt-JZ-NBU">
-                                <rect key="frame" x="36" y="146" width="42" height="21"/>
+                                <rect key="frame" x="36" y="119" width="174" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -84,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wln-LR-w9P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1812" y="135"/>
+            <point key="canvasLocation" x="1811.594202898551" y="134.59821428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XSW-VD-Igi">
