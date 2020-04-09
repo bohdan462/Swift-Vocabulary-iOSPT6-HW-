@@ -42,7 +42,22 @@
                             <outlet property="delegate" destination="cke-cx-61X" id="RBA-ad-vj3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Swift Vocabulary" id="iXY-Pq-9Jf"/>
+                    <navigationItem key="navigationItem" title="Swift Vocabulary" id="iXY-Pq-9Jf">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Y64-cQ-kkD">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="V6U-Nx-8Tq">
+                                <rect key="frame" x="302" y="5.5" width="92" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="cke-cx-61X" eventType="touchUpInside" id="2ZZ-FM-2bR"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="cke-cx-61X" id="Fev-j1-O5e"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D68-FR-XnB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,38 +10,47 @@ import UIKit
 
 
 class WordsTableTableViewController: UITableViewController {
+    
+    @IBAction func addButtonPressed(_ sender: UIButton) {
+        //Creating pop up alert
+          let alertController = UIAlertController(title: "New Word", message: "Add a new word to the vocabulary", preferredStyle: .alert)
+              alertController.addTextField { (textField : UITextField!) -> Void in
+                      textField.placeholder = "Word"
+                  }
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Definition"
+        }
+            // Creating Save action
+              let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
+                let firstTextField = alertController.textFields![0].text //as UITextField
+                let secondTextField = alertController.textFields![1].text
+                guard let word = firstTextField else {return}
+                guard let definition = secondTextField else {return}
+                // Adding inputed iteams to the array
+                self.vocabWords.append(VocabularyWord(word: word, definition: definition))
+                //Reloading table view
+                self.tableView.reloadData()
+                    })
+            //Cancel Action
+              let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {
+                      (action : UIAlertAction!) -> Void in })
 
-    let alertButton = UIAlertController(title: "New Vocabulary", message: "Add new vocab word here", preferredStyle: .actionSheet)
-    
-    let button=UIButton.init(type: .system)
-    
-    func allertShow() {
-    button.setTitle("NEXT", for: .normal)
-    button.frame.size = CGSize(width: 100, height: 50)
-    self.view.addSubview(button)
-    
+                  alertController.addAction(saveAction)
+                  alertController.addAction(cancelAction)
+        
 
-    //set constrains
-    button.translatesAutoresizingMaskIntoConstraints = false
-    if #available(iOS 11.0, *) {
-         button.rightAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.rightAnchor, constant: -10).isActive = true
-         button.bottomAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
-    } else {
-         button.rightAnchor.constraint(equalTo: tableView.layoutMarginsGuide.rightAnchor, constant: 0).isActive = true
-         button.bottomAnchor.constraint(equalTo: tableView.layoutMarginsGuide.bottomAnchor, constant: -10).isActive = true
-    }
-}
+              self.present(alertController, animated: true, completion: nil)
+        }
     
-    
+   
+
+    // Created array of vocab words
     var vocabWords: [VocabularyWord] = [
         VocabularyWord(word: "Variable", definition: "A name value used to store inforamation. Variables can be changed after being created"),
         VocabularyWord(word: "Constant", definition: "Refer to fixed values that a program may not alter during its execution. Constants can not be changed after being created"),
         VocabularyWord(word: "Function", definition: "Functions are self-contained chunks of code that perform a specific task. You give a function a name that identifies what it does, and this name is used to call the function to perform its task when needed.")
     
     ]
-    
-
-    // MARK: - Table view data source
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
